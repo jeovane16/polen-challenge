@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100px;
-  background-color: #282A36	;
+  background-color: var(--background-color-secundary)	;
 }
 
 .container-header a {

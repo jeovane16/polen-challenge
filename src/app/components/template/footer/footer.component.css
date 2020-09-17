@@ -1,0 +1,18 @@
+.container-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--background-color-secundary);
+  color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+}
+
+.container-footer span {
+  font-weight: normal;
+}
+
+.container-footer i {
+  color: var(--red-color);
+  vertical-align: middle;
+}
