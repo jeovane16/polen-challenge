@@ -1,0 +1,19 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save {
+  background-color: var(--green-color);
+}
+
+.cancel {
+  background-color: var(--red-color);
+}

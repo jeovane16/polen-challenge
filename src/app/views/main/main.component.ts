@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import {OngCreateComponent} from "../../components/main/ong-create/ong-create.component";
 
 @Component({
@@ -12,9 +12,18 @@ export class MainComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(OngCreateComponent, {
-      width: '80%',
-    })
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '50%';
+
+    dialogConfig.data = {
+      id: 1,
+      title: "teste"
+    }
+
+    this.dialog.open(OngCreateComponent, dialogConfig);
   }
 
   ngOnInit(): void {

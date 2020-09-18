@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataOng } from './ong.model';
 import { LocalStorage } from '@ngx-pwa/local-storage';
-import {Observable} from "rxjs";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
