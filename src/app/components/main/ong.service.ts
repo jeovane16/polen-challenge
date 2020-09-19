@@ -19,7 +19,11 @@ export class OngService {
     });
   }
 
-  create(ong: DataOng): Observable<boolean> {
-    return this.localStorage.setItem(ong.name, ong.name);
+  create(ongs: DataOng[]): Observable<boolean> {
+    return this.localStorage.setItem('listOng', ongs);
+  }
+
+  read(): Observable<any> {
+    return this.localStorage.getItem('listOng');
   }
 }

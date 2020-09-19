@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { MainComponent } from './views/main/main.component';
 import { OngCreateComponent } from './components/main/ong-create/ong-create.component';
+import { OngReadComponent } from './components/main/ong-read/ong-read.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OngCreateComponent } from './components/main/ong-create/ong-create.comp
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    OngCreateComponent
+    OngCreateComponent,
+    OngReadComponent
   ],
   imports: [
     BrowserModule,

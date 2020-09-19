@@ -20,6 +20,8 @@ export class OngCreateComponent implements OnInit {
     slogan: ''
   };
 
+  listOng: DataOng[];
+
   constructor(
     private ongService: OngService,
     private fb: FormBuilder,
@@ -30,7 +32,11 @@ export class OngCreateComponent implements OnInit {
   }
 
   createOng(): void{
-    this.ongService.create(this.currentOng).subscribe(()=> {
+    this.ongService.read().subscribe((ongs: DataOng[])=> {
+      this.listOng = ongs;
+      this.listOng.push(this.currentOng);
+    });
+    this.ongService.create(this.listOng).subscribe(()=> {
       this.ongService.showMessage('ONG criada com sucesso');
     });
     this.dialogRef.close();
