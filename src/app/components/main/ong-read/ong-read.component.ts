@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import { OngService } from '../ong.service';
 import { DataOng } from '../ong.model';
 
@@ -9,14 +9,20 @@ import { DataOng } from '../ong.model';
 })
 export class OngReadComponent implements OnInit {
 
-  ongList: DataOng[];
+  ongList: DataOng[] = [];
 
-  constructor(private ongService: OngService) { }
+  constructor(private ongService: OngService) {
+    ongService.get('updateTable').subscribe(ongs => this.ongList = ongs);
+  }
 
   ngOnInit(): void {
     this.ongService.read().subscribe((ongs: DataOng[])=> {
-      this.ongList = ongs;
+      if(ongs) {
+        this.ongList = ongs;
+      }
+      else {
+        this.ongList = [];
+      }
     });
   }
-
 }

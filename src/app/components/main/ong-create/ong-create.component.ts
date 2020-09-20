@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DataOng } from '../ong.model';
-import {OngService} from "../ong.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import { OngService } from "../ong.service";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-ong-create',
@@ -20,7 +20,7 @@ export class OngCreateComponent implements OnInit {
     slogan: ''
   };
 
-  listOng: DataOng[];
+  listOng: DataOng[]=[];
 
   constructor(
     private ongService: OngService,
@@ -33,13 +33,19 @@ export class OngCreateComponent implements OnInit {
 
   createOng(): void{
     this.ongService.read().subscribe((ongs: DataOng[])=> {
-      this.listOng = ongs;
+      if(ongs){
+        this.listOng = ongs;
+      }
+      else {
+        this.listOng=[];
+      }
       this.listOng.push(this.currentOng);
+      this.ongService.create(this.listOng).subscribe(()=> {
+        this.ongService.showMessage('ONG criada com sucesso');
+        this.ongService.get('updateTable').emit(this.listOng);
+        this.dialogRef.close();
+      });
     });
-    this.ongService.create(this.listOng).subscribe(()=> {
-      this.ongService.showMessage('ONG criada com sucesso');
-    });
-    this.dialogRef.close();
   }
 
   onCancel(): void {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataOng } from './ong.model';
 import { LocalStorage } from '@ngx-pwa/local-storage';
@@ -9,6 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class OngService {
 
+  @Output() emmiters: {
+    [eventName: string]: EventEmitter<any>
+  } = {}
+
   constructor(private snackBar: MatSnackBar, private localStorage: LocalStorage) { }
 
   showMessage(msg: string): void {
@@ -17,6 +21,13 @@ export class OngService {
       horizontalPosition: 'right',
       verticalPosition: 'top'
     });
+  }
+
+  get(eventName: string): EventEmitter<any>{
+    if(!this.emmiters[eventName]){
+      this.emmiters[eventName] = new EventEmitter<any>();
+    }
+    return this.emmiters[eventName];
   }
 
   create(ongs: DataOng[]): Observable<boolean> {
