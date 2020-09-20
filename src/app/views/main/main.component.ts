@@ -18,11 +18,6 @@ export class MainComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = '50%';
 
-    dialogConfig.data = {
-      id: 1,
-      title: "teste"
-    }
-
     this.dialog.open(OngCreateComponent, dialogConfig);
   }
 

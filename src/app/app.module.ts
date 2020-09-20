@@ -20,6 +20,7 @@ import { OngReadComponent } from './components/main/ong-read/ong-read.component'
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { OngUpdateComponent } from './components/main/ong-update/ong-update.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatSortModule } from '@angular/material/sort';
     MainComponent,
     OngCreateComponent,
     OngReadComponent,
+    OngUpdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { DataOng } from '../ong.model';
 import { OngService } from "../ong.service";
-import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-ong-create',
@@ -11,10 +10,8 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 })
 export class OngCreateComponent implements OnInit {
 
-  form: FormGroup;
-  description:string;
-
   currentOng: DataOng = {
+    id: null,
     name: '',
     site: '',
     slogan: ''
@@ -24,12 +21,8 @@ export class OngCreateComponent implements OnInit {
 
   constructor(
     private ongService: OngService,
-    private fb: FormBuilder,
     private dialogRef: MatDialogRef<OngCreateComponent>,
-    @Inject(MAT_DIALOG_DATA) data
-  ) {
-    this.description = data.description
-  }
+  ) { }
 
   createOng(): void{
     this.ongService.read().subscribe((ongs: DataOng[])=> {
@@ -39,6 +32,14 @@ export class OngCreateComponent implements OnInit {
       else {
         this.listOng=[];
       }
+      const ongTemp = this.listOng.reduce( (ong1, ong2) => {
+        if(ong1.id >= ong2.id){
+          return ong1;
+        }
+        return ong2
+      });
+      this.currentOng.id = ongTemp.id+1;
+
       this.listOng.push(this.currentOng);
       this.ongService.create(this.listOng).subscribe(()=> {
         this.ongService.showMessage('ONG criada com sucesso');
