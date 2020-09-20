@@ -17,6 +17,9 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { MainComponent } from './views/main/main.component';
 import { OngCreateComponent } from './components/main/ong-create/ong-create.component';
 import { OngReadComponent } from './components/main/ong-read/ong-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { OngReadComponent } from './components/main/ong-read/ong-read.component'
     FooterComponent,
     MainComponent,
     OngCreateComponent,
-    OngReadComponent
+    OngReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,10 @@ import { OngReadComponent } from './components/main/ong-read/ong-read.component'
     MatInputModule,
     MatDialogModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],

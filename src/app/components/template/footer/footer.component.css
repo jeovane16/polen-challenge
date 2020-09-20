@@ -4,8 +4,6 @@
   justify-content: flex-end;
   background-color: var(--background-color-secundary);
   color: #FFFFFF;
-  position: fixed;
-  bottom: 0;
   box-shadow: 0 -4px 2px #1d1d26;
 }
 

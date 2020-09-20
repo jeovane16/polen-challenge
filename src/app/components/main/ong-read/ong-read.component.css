@@ -1,0 +1,14 @@
+.container-table {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.edit {
+  color: var(--yellow-color);
+}
+
+.delete {
+  color: var(--red-color);
+  margin-left: 20px;
+}
