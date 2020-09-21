@@ -1,27 +1,85 @@
-# PolenChallenge
+<h1 align="center">Polen Challenge</h1>
+<h2 align="center">CRUD para ONGS usando Angular</h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+<p align="center">
+    <a href="https://nodejs.org/en/">
+        <img alt="NodeJS" src="https://img.shields.io/badge/made%20with-NodeJS-bgGreen">
+    </a>
+</p>
 
-## Development server
+<p align="center">
+    <a href="https://angular.io/">
+        <img alt="Angular" src="https://img.shields.io/badge/made%20with-Angular-red">
+    </a>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Sumário
 
-## Code scaffolding
+- [:books: Sobre](#books-sobre)
+- [:robot: Técnologias](#robot-técnologias)
+- [:question: Como executar](#question-como-executar)
+- [:computer: Visão Geral](#computer-visão-geral)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<a id="sobre"></a>
+## :books: Sobre
 
-## Build
+Desafio proposto pela empresa Polen, o desafio consiste em criar um CRUD para o cadastro de ONGs.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<a id="tecnologias"></a>
+## :robot: Técnologias
 
-## Running unit tests
+As principais técnologias utilizadas foram:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Node.js](https://nodejs.org/en/)
+- [Angular](https://angular.io/)
 
-## Running end-to-end tests
+## :question: Como executar
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- #### **Requisitos**
+    - Ter o [Agular CLI](https://cli.angular.io/)
+    - Ter o [Node.js](https://nodejs.org/en/)
+    - Ter um gerenciador de pacotes [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
 
-## Further help
+- #### Faça um clone
+```sh
+  $ https://github.com/jeovane16/polen-challenge.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- #### Execute os comandos (de preferência na ordem mostrada) 
+
+```sh
+
+  # Entre na pasta do projeto e instale as dependencias
+  $ cd pollen-challenge
+  $ yarn install
+
+  # Caso utilize o npm
+  $ npm install
+
+  # Inicie a aplicação
+  $ ng serve
+
+```
+
+<a id="visao-geral"></a>
+## :computer: Visão Geral
+
+- #### **Criar**
+<h1 align="center">
+    <img src=".github/create-ong.gif">
+</h1>
+
+- #### **Atualizar**
+<h1 align="center">
+    <img src=".github/update-ong.gif">
+</h1>
+
+- #### **Excluir**
+<h1 align="center">
+    <img src=".github/delete-ong.gif">
+</h1>
+
+- #### **Selecionar**
+<h1 align="center">
+    <img src=".github/check-ong.gif">
+</h1>
