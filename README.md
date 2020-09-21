@@ -50,7 +50,7 @@ As principais técnologias utilizadas foram:
 ```sh
 
   # Entre na pasta do projeto e instale as dependencias
-  $ cd pollen-challenge
+  $ cd polen-challenge
   $ yarn install
 
   # Caso utilize o npm
