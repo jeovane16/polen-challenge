@@ -13,6 +13,11 @@
   background-color: var(--green-color);
 }
 
+.save:disabled {
+  background-color: var(--background-color-secundary);
+  cursor: none;
+}
+
 .cancel {
   background-color: var(--red-color);
 }

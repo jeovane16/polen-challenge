@@ -15,5 +15,5 @@
 
 <mat-dialog-actions class='container-buttons'>
   <button class='mat-raised-button cancel' (click)='onCancel()' >Cancelar</button>
-  <button class='mat-raised-button save' (click)='createOng()'>Salvar</button>
+  <button class='mat-raised-button save' (click)='createOng()' [disabled]="!currentOng.name || !currentOng.slogan || !currentOng.site">Salvar</button>
 </mat-dialog-actions>

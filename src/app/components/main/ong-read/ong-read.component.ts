@@ -4,6 +4,8 @@ import { DataOng } from '../ong.model';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {OngUpdateComponent} from "../ong-update/ong-update.component";
 import {OngDeleteComponent} from "../ong-delete/ong-delete.component";
+import {SelectionModel} from "@angular/cdk/collections";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-ong-read',
@@ -13,7 +15,8 @@ import {OngDeleteComponent} from "../ong-delete/ong-delete.component";
 export class OngReadComponent implements OnInit {
 
   ongList: DataOng[]=[];
-  displayedColumns = ['id', 'name', 'site', 'slogan', 'action'];
+  displayedColumns = ['select', 'id', 'name', 'site', 'slogan', 'action'];
+  selection = new SelectionModel<DataOng>(true, []);
 
   constructor(private ongService: OngService, public dialog: MatDialog) {
     ongService.get('updateTable').subscribe(ongs => {
@@ -64,5 +67,17 @@ export class OngReadComponent implements OnInit {
         this.ongList = [];
       }
     });
+  }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.ongList.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.ongList.forEach(row => this.selection.select(row));
   }
 }

@@ -2,6 +2,9 @@
 <mat-dialog-content >
   <form class='form-container'>
     <mat-form-field>
+      <input matInput placeholder='ID' [(ngModel)]='currentOng.id' name='id' disabled>
+    </mat-form-field>
+    <mat-form-field>
       <input matInput placeholder='Nome' [(ngModel)]='currentOng.name' name='name' disabled>
     </mat-form-field>
     <mat-form-field>

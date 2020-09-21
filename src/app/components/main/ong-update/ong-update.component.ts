@@ -36,7 +36,7 @@ export class OngUpdateComponent implements OnInit {
       else {
         this.listOng=[];
       }
-      this.listOng[this.currentOng.id] = this.currentOng
+      this.listOng[this.currentOng.id-1] = this.currentOng
       this.ongService.create(this.listOng).subscribe(()=> {
         this.ongService.showMessage('ONG atualizada com sucesso');
         this.ongService.get('updateTable').emit(this.listOng);

@@ -3,9 +3,10 @@
   margin: 30px auto auto auto;
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
 }
 
 .container-main button {
   width: 160px;
-  background-color: var(--green-color);
+  background-color: var(--purple-color);
 }

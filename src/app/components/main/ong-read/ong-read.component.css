@@ -2,6 +2,11 @@
   width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: var(--background-color-secundary);
+}
+
+.container-table td {
+  color: #FFFFFF;
 }
 
 .edit {
@@ -13,4 +18,8 @@
   color: var(--red-color);
   margin-left: 20px;
   cursor: pointer;
+}
+
+.select {
+  background: var(--purple-color) !important;
 }

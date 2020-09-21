@@ -9,10 +9,12 @@ body {
   width: 100vw;
 }
 
+
 :root {
   --background-color-primary: #282A36;
   --background-color-secundary: #44475A;
   --red-color: #FF5555;
   --yellow-color: #F1FA8C;
   --green-color: #50FA7B;
+  --purple-color: #BD93F9
 }
