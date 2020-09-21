@@ -1,15 +1,14 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {OngService} from "../ong.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DataOng} from "../ong.model";
 
 @Component({
-  selector: 'app-ong-update',
-  templateUrl: './ong-update.component.html',
-  styleUrls: ['./ong-update.component.css']
+  selector: 'app-ong-delete',
+  templateUrl: './ong-delete.component.html',
+  styleUrls: ['./ong-delete.component.css']
 })
-export class OngUpdateComponent implements OnInit {
+export class OngDeleteComponent implements OnInit {
 
   currentOng: DataOng = {
     id: null,
@@ -22,13 +21,13 @@ export class OngUpdateComponent implements OnInit {
 
   constructor(
     private ongService: OngService,
-    private dialogRef: MatDialogRef<OngUpdateComponent>,
+    private dialogRef: MatDialogRef<OngDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) data
   ) {
     this.currentOng = data;
   }
 
-  updateOng(): void {
+  deleteOng(): void {
     this.ongService.read().subscribe((ongs: DataOng[])=> {
       if(ongs){
         this.listOng = ongs;
@@ -36,9 +35,15 @@ export class OngUpdateComponent implements OnInit {
       else {
         this.listOng=[];
       }
-      this.listOng[this.currentOng.id] = this.currentOng
+      let currentPosition = -1;
+      this.listOng.forEach((ong, index) => {
+        if(ong.id === this.currentOng.id){
+          currentPosition = index;
+        }
+      });
+      this.listOng.splice(currentPosition , 1);
       this.ongService.create(this.listOng).subscribe(()=> {
-        this.ongService.showMessage('ONG atualizada com sucesso');
+        this.ongService.showMessage('ONG deletada com sucesso');
         this.ongService.get('updateTable').emit(this.listOng);
         this.dialogRef.close();
       });

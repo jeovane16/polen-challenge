@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { OngUpdateComponent } from './components/main/ong-update/ong-update.component';
+import { OngDeleteComponent } from './components/main/ong-delete/ong-delete.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OngUpdateComponent } from './components/main/ong-update/ong-update.comp
     OngCreateComponent,
     OngReadComponent,
     OngUpdateComponent,
+    OngDeleteComponent,
   ],
   imports: [
     BrowserModule,

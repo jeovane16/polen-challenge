@@ -5,6 +5,8 @@
   background-color: var(--background-color-secundary);
   color: #FFFFFF;
   box-shadow: 0 -4px 2px #1d1d26;
+  position: fixed;
+  bottom: 0;
 }
 
 .container-footer span {

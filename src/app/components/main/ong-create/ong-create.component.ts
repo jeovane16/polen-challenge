@@ -17,6 +17,8 @@ export class OngCreateComponent implements OnInit {
     slogan: ''
   };
 
+  ongTemp: DataOng;
+
   listOng: DataOng[]=[];
 
   constructor(
@@ -32,13 +34,17 @@ export class OngCreateComponent implements OnInit {
       else {
         this.listOng=[];
       }
-      const ongTemp = this.listOng.reduce( (ong1, ong2) => {
-        if(ong1.id >= ong2.id){
-          return ong1;
-        }
-        return ong2
-      });
-      this.currentOng.id = ongTemp.id+1;
+      if(this.listOng.length > 0){
+        this.ongTemp = this.listOng.reduce( (ong1, ong2) => {
+          if(ong1.id >= ong2.id){
+            return ong1;
+          }
+          return ong2
+        });
+        this.currentOng.id = this.ongTemp.id+1;
+      }else {
+        this.currentOng.id = 1;
+      }
 
       this.listOng.push(this.currentOng);
       this.ongService.create(this.listOng).subscribe(()=> {

@@ -28,11 +28,11 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let row">
-        <a (click)="openDialog(row.id, row.name, row.site, row.slogan)" class="edit">
+        <a (click)="openDialogUpdate(row.id, row.name, row.site, row.slogan)" class="edit">
           <i class="material-icons">edit</i>
         </a>
 
-        <a class="delete">
+        <a (click)="openDialogDelete(row.id, row.name, row.site, row.slogan)" class="delete">
           <i class="material-icons">delete</i>
         </a>
       </td>

@@ -6,9 +6,11 @@
 
 .edit {
   color: var(--yellow-color);
+  cursor: pointer;
 }
 
 .delete {
   color: var(--red-color);
   margin-left: 20px;
+  cursor: pointer;
 }

@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Deletar Ong</h2>
+<mat-dialog-content >
+  <form class='form-container'>
+    <mat-form-field>
+      <input matInput placeholder='Nome' [(ngModel)]='currentOng.name' name='name' disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder='Site' [(ngModel)]='currentOng.site' name='site' disabled>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder='Slogan' [(ngModel)]='currentOng.slogan' name='slogan' disabled>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class='container-buttons'>
+  <button class='mat-raised-button cancel' (click)='onCancel()' >Cancelar</button>
+  <button class='mat-raised-button save' (click)='deleteOng()'>Deletar</button>
+</mat-dialog-actions>
